@@ -1,5 +1,6 @@
 package lec04;
-import lec03.Card;
+
+//important to write documentation
 
 public interface CardSource {
 	/**
