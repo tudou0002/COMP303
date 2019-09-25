@@ -1,8 +1,5 @@
 package lec05;
 
-import lec02.Suit.Color;
-import java.lang.*;
-
 public enum Suit 
 {
 	CLUBS("\u2663"), DIAMONDS("\u2662"), SPADES("\u2660"), HEARTS("\u2661");
