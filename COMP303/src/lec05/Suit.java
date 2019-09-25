@@ -5,7 +5,13 @@ import java.lang.*;
 
 public enum Suit 
 {
-	CLUBS(Character.toChars(U+2663)), DIAMONDS, SPADES, HEARTS;
+	CLUBS("\u2663"), DIAMONDS("\u2662"), SPADES("\u2660"), HEARTS("\u2661");
+	
+	private final String aSymbol;
+	
+	private Suit(String pSymbol) {
+		aSymbol = pSymbol;
+	}
 	
 	public enum Color {RED, BLACK};
 	
