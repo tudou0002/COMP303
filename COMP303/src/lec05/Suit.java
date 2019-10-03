@@ -7,6 +7,7 @@ public enum Suit
 	private final String aSymbol;
 	
 	private Suit(String pSymbol) {
+		//constructor must be private
 		aSymbol = pSymbol;
 	}
 	
