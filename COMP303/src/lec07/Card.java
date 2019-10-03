@@ -5,8 +5,8 @@ import lec02.Rank;
 
 public class Card {
 	
-	private Suit aSuit;
-	private Rank aRank;
+	private final Suit aSuit;
+	private final Rank aRank;
 	
 	public int compareTo(Card pCard) {
 		return aSuit.ordinal() - pCard.aSuit.ordinal();
@@ -42,25 +42,43 @@ public class Card {
 	
 	//to make the card unique now
 	//first, we need to make constructor private
-	//flyweight  has to be immutable
-	private static Card[] aCards;
-	static {
-		//this is a pre-initialized version
-		//use lazy-initialization when the number of unique object are huge
-		for(Suit suit : Suit.values()){
-			for (Rank rank : Rank.values()) {
-				aCards[suit.ordinal()*13 + rank.ordinal()] = new Card(rank, suit);
-			}
-		}
-	}
+	//fly-weight  has to be immutable
+//	private static final Card[] CARDS = new Card[Suit.values().length *13 + Rank.values().length];
+//	static {
+//		//this is a pre-initialized version
+//		//use lazy-initialization when the number of unique object are huge
+//		for(Suit suit : Suit.values()){
+//			for (Rank rank : Rank.values()) {
+//				CARDS[suit.ordinal()*13 + rank.ordinal()] = new Card(rank, suit);
+//			}
+//		}
+//	}
+//	
+//	private Card(Rank pRank, Suit pSuit) {
+//		assert pRank != null && pSuit != null;
+//		aRank = pRank;
+//		aSuit = pSuit;
+//	}
+//	
+//	public static Card get(Rank pRank, Suit pSuit) {
+//		//this is a factory method to replace the constructor
+//		return CARDS[pSuit.ordinal() *13 + pRank.ordinal()];
+//	}
+	
+	//now we use lazy-initialization
+	private static final Card[] CARDS = new Card[Suit.values().length*13+Rank.values().length];
 	
 	private Card(Rank pRank, Suit pSuit) {
-		assert pRank != null && pSuit != null;
+		assert pRank != null && pSuit !=null;
+		aRank=pRank;
+		aSuit = pSuit;
 	}
 	
 	public static Card get(Rank pRank, Suit pSuit) {
-		//this is a factory method to replace the constructor
-		return aCards[pSuit.ordinal() *13 + pRank.ordinal()];
+		if (CARDS[pSuit.ordinal()*13+pRank.ordinal()] ==null){
+			CARDS[pSuit.ordinal()*13+pRank.ordinal()] = new Card(pRank, pSuit);
+		}
+		return CARDS[pSuit.ordinal()*13+pRank.ordinal()];
 	}
 
 }
