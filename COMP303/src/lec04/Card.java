@@ -1,10 +1,12 @@
 package lec04;
 
+import java.util.Comparator;
+
 import lec02.Rank;
 import lec02.Suit;
 
 //use static factory method in card that creates object in comparator later so you can access the private field
-public class Card implements Comparable<Card> {
+public class Card implements Comparable<Card>{
 	private Suit aSuit;
 	private Rank aRank;
 //	private boolean bySuit;
@@ -21,31 +23,27 @@ public class Card implements Comparable<Card> {
 		aRank = pRank;
 	}
 	
-	@Override
-	/*
-	 *Overriding is a feature that allows a subclass or child class 
-	 *to provide a specific implementation of a method that is already provided 
-	 *by one of its super-classes or parent classes
-	 */
-	public int compareTo(Card pCard) {
-		return aSuit.ordinal() - pCard.aSuit.ordinal();
-		
+	
+	
+	//followings are static factory methods
+	public static Comparator<Card> createByRank(){
+		return new Comparator<Card>() {
+
+			@Override
+			public int compare(Card o1, Card o2) {
+				return o1.aRank.ordinal() - o2.aRank.ordinal();
+			}
+			
+		};
 	}
 	
-	/*
-	 * this is the case where you want to sort between suit and rank
-	 * but card only implements Comparable
-	 */
-//	public int compareTo(Card pCard) {
-//		return aSuit.compareTo(pCard.aSuit); //enum is a subtype of comparable
-//		if(bySuit) then {
-//			
-//		} else {
-//			//how to change the bysuit value?
-//			//setter OR set by constructor
-//			//end with a disgusting mess
-//		}
-//	}
+	public static Comparator<Card> createBySuit(){
+		return new Comparator<Card>() {
+			public int compare(Card o1, Card o2) {
+				return o1.aSuit.ordinal() - o2.aSuit.ordinal();
+			}
+		};
+	}
 	
 	public String toString() {
 		return aSuit.toString() + " of "+ aRank.toString();
@@ -57,6 +55,13 @@ public class Card implements Comparable<Card> {
 	
 	public Rank getRank() {
 		return aRank;
+	}
+
+
+
+	@Override
+	public int compareTo(Card o) {
+		return this.aSuit.ordinal() - o.aSuit.ordinal();
 	}
 
 	

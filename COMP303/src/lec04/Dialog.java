@@ -19,15 +19,22 @@ public class Dialog {
 		Deck deck2 = new Deck();
 		Deck deck3 = new Deck();
 		Deck deck4 = new Deck();
+		Deck deck5 = new Deck();
+		Deck deck6 = new Deck();
 		
 		deck1.sort1();//sortBySuit
 		deck2.sort2();//sortBySuit
 		deck3.sort3();//sortBySuit
 		deck4.sort4();//sortByRank
+		deck5.sort5();//sortByRank
+		deck6.sort6();//sortBySuit
 		System.out.println(deck1.toString());
 		System.out.println(deck2.toString());
 		System.out.println(deck3.toString());
 		System.out.println(deck4.toString());
+		System.out.println(deck5.toString());
+		System.out.println(deck6.toString());
+		
 		
 //		Icon icon = new ImageIcon("warning.png");
 //		Icon icon2 = new CircleIcon(10);

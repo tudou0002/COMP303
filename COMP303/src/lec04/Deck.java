@@ -6,7 +6,7 @@ import java.util.List;
 
 import lec02.Rank;
 import lec02.Suit;
-public class Deck implements CardSource {
+public class Deck implements CardSource{
 	/*
 	 * 'implements' key word:
 	 * guarantee that instances of this class type will implement all the methods in interface
@@ -80,6 +80,20 @@ public class Deck implements CardSource {
 	public void sort3() {
 		Collections.sort(aCards);
 		
+	}
+	
+	/**
+	 * use factory method in Card to sort by Rank
+	 */
+	public void sort5() {
+		Collections.sort(aCards, Card.createByRank());
+	}
+	
+	/**
+	 * use factory method in Card to sort by Suit
+	 */
+	public void sort6() {
+		Collections.sort(aCards, Card.createBySuit());
 	}
 	
 	public void shuffle() {
