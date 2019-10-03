@@ -40,8 +40,8 @@ public class Game {
 		
 		System.out.println(deck3.ofSameSize(deck2));
 		System.out.println(deck3.getCard(51).toString());
-		List<Card> deck4 = deck3.getCards();
-		deck4.remove(1);
+		Deck deck4 = new Deck(deck3);
+		System.out.println(deck4.getCards().toString());
 		
 		
 		
