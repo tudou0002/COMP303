@@ -1,13 +1,12 @@
 package lec05;
 
 import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import lec02.Rank;
-import lec02.Suit;
-import lec04.Card;
 
 
 public class Deck implements Iterable<Card>{
@@ -38,28 +37,28 @@ public class Deck implements Iterable<Card>{
 		return aCards.remove(aCards.size()-1);
 	}
 	
-	public class CardIterator implements Iterator<Card>{
-		/*
-		 * design pattern "ITERATOR"
-		 * write a concrete iterator for better encapsulation
-		 */
-		private int index;
-		
-		public CardIterator() {
-			index = 0;
-		}
-
-		@Override
-		public boolean hasNext() {
-			return index < aCards.size()-1;
-		}
-
-		@Override
-		public Card next() {
-			index++;
-			return aCards.get(index);
-		}
-	}
+//	public class CardIterator implements Iterator<Card>{
+//		/*
+//		 * design pattern "ITERATOR"
+//		 * write a concrete iterator for better encapsulation
+//		 */
+//		private int index;
+//		
+//		public CardIterator() {
+//			index = 0;
+//		}
+//
+//		@Override
+//		public boolean hasNext() {
+//			return index < aCards.size()-1;
+//		}
+//
+//		@Override
+//		public Card next() {
+//			index++;
+//			return aCards.get(index);
+//		}
+//	}
 	
 //	public Iterator<Card> iterator()
 //	{
@@ -68,7 +67,20 @@ public class Deck implements Iterable<Card>{
 //	}
 	
 	public Iterator<Card> iterator() {
-		return new CardIterator();
+		return new Iterator<Card>() {
+			private int index;
+	
+			@Override
+			public boolean hasNext() {
+				return index < aCards.size()-1;
+			}
+	
+			@Override
+			public Card next() {
+				index++;
+				return aCards.get(index);
+			}
+		};
 	}
 
 }

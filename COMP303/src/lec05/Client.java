@@ -6,11 +6,11 @@ public class Client {
 		Deck deck = new Deck();
 //		showAll(deck.iterator());
 		
-		for(lec04.Card card : deck) {
+		for(Card card : deck) {
 			System.out.println(card.toString());
 		}
 		System.out.println();
-		for(lec04.Card card : deck) {
+		for(Card card : deck) {
 			System.out.println(card.toString());
 		}
 		

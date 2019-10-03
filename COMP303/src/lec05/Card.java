@@ -1,7 +1,7 @@
 package lec05;
 
 import lec02.Rank;
-import lec02.Suit;
+
 
 public class Card implements Comparable<Card>{
 	private Suit aSuit;
@@ -17,6 +17,7 @@ public class Card implements Comparable<Card>{
 		aRank = pRank;
 	}
 	
+
 	public int compareTo(Card pCard) {
 		return aSuit.ordinal() - pCard.aSuit.ordinal();
 		
@@ -24,7 +25,7 @@ public class Card implements Comparable<Card>{
 	
 	
 	public String toString() {
-		return aSuit.toString() + " of "+ aRank.toString();
+		return aSuit.toString() + aRank.toString();
 	}
 	
 	public Suit getSuit() {
