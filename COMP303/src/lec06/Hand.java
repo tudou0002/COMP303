@@ -1,11 +1,12 @@
 package lec06;
 
 import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.List;
 
 import lec05.Card;
-import lec02.Suit;
+import lec05.Suit;
 
 public class Hand {
 	//create a factory method that create a comparator and compare number of suit of two hands
