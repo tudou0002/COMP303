@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Immutable
 public @interface Immutable {
 	public String inspector() default "Yifei";
-	//@Immutable
+	//@Immutable(inspector="Someone")
 }
