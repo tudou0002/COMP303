@@ -64,5 +64,10 @@ public class Metaprogram {
 	public static boolean isImmutable(Object pObject) {
 		return pObject.getClass().getAnnotation(Immutable.class) != null;
 	}
+	
+	public static boolean isOverride(Object pObject) {
+		return pObject.getClass().getAnnotation(Override.class) != null;
+		//cannot be detected since @Retention is Source
+	}
 
 }
