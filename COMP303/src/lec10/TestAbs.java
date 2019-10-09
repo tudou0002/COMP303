@@ -6,23 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class TestAbs {
+	/*must be public void , why*/
 	
 	@Test
-	public static void testAbs_MinValue() {
+	public void testAbs_MinValue() {
 		//go read the java document
 		assertEquals(Integer.MIN_VALUE, Math.abs(Integer.MIN_VALUE));
 	}
 	
 	@Test
-	public static void testAbs_Zero() {
+	public void testAbs_Zero() {
 		//go read the java document
 		assertEquals(0, Math.abs(0));
 	}
 	
-	@Test
-	public static void main(String[] args) {
-		testAbs_Zero();
-		System.out.println("All test passed");
-	}
+	
 
 }
