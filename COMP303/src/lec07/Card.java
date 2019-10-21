@@ -43,6 +43,7 @@ public class Card {
 	//to make the card unique now
 	//first, we need to make constructor private
 	//fly-weight  has to be immutable
+	
 //	private static final Card[] CARDS = new Card[Suit.values().length *13 + Rank.values().length];
 //	static {
 //		//this is a pre-initialized version
@@ -57,7 +58,7 @@ public class Card {
 //	private Card(Rank pRank, Suit pSuit) {
 //		assert pRank != null && pSuit != null;
 //		aRank = pRank;
-//		aSuit = pSuit;
+//		aSuit = pSuit; 
 //	}
 //	
 //	public static Card get(Rank pRank, Suit pSuit) {
