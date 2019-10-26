@@ -4,7 +4,21 @@ import java.util.EnumMap;
 
 public class Program {
 	private final EnumMap<Day,Show> aShows = new EnumMap<>(Day.class);
+	
+	private static Show aDefault;
+	
+	public static void setDefault(Show pShow) {
+		aDefault = pShow;
+	}
 //	private final CommandProcessor;
+	
+	public static Program createdWithDefault() {
+		Program result = new Program();
+		for(Day day : Day.values()) {
+			result.aShows.put(day, aDefault);
+		}
+		return result;
+	}
 	
 	public Program() {
 		clear();

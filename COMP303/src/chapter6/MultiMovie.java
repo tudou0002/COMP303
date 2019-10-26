@@ -5,17 +5,17 @@ import java.util.List;
 
 public class MultiMovie implements Show{
 
-	private List<Show> shows = new ArrayList<>();
+	private List<Show> aMovies = new ArrayList<>();
 	
-	public MultiMovie(Show ...pshows) {
-		for(Show show : pshows) {
-			shows.add(show);
+	public MultiMovie(Movie ...pmovies) {
+		for(Show show : pmovies) {
+			aMovies.add(show);
 		}
 	}
 	@Override
 	public String description() {
 		StringBuilder str = new StringBuilder();
-		for(Show show : shows) {
+		for(Show show : aMovies) {
 			str.append(show.description()+" ");
 		}
 		return str.toString();
@@ -24,7 +24,7 @@ public class MultiMovie implements Show{
 	@Override
 	public int RunningTime() {
 		int time = 0;
-		for(Show show: shows) {
+		for(Show show: aMovies) {
 			time += show.RunningTime();
 		}
 		return time;

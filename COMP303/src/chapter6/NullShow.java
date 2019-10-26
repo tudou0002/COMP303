@@ -4,7 +4,7 @@ public class NullShow implements Show{
 
 	@Override
 	public String description() {
-		return "Null";
+		return "No show";
 	}
 
 	@Override
