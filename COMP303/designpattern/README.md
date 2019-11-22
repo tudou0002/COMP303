@@ -10,3 +10,12 @@ I found that doing some actual coding really helps me to prepare for COMP course
     - `sortId()` used an annoymous class
     - `sortAcceptance()` used a seperate object class called `CompareByAcceptance`
     - `sortDifficulty()` used a nested class in class `Problems`
+    
+# Flyweight
+- Created immutable and unique `Item` object using HashMap.
+
+# Composite
+- Tree-like hierarchy with leaves are `Regular` and `Espresso`.
+
+# Decorator
+- Added a decorator named `Latte`.
