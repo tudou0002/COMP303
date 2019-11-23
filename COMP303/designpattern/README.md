@@ -10,3 +10,20 @@ I found that doing some actual coding really helps me to prepare for COMP course
     - `sortId()` used an annoymous class
     - `sortAcceptance()` used a seperate object class called `CompareByAcceptance`
     - `sortDifficulty()` used a nested class in class `Problems`
+    
+# Flyweight
+- Created immutable and unique `Item` object using HashMap.
+
+# Composite
+- Tree-like hierarchy with leaves are `Regular` and `Espresso`.
+
+# Decorator
+- Added a decorator named `Latte`.
+
+# Template
+- Mostly used in describing a process which some steps need to be changed based on different cases.
+- Created an abstract class `MakeCoffee` and a concrete class `Latte`.
+
+# Prototype
+- Imagine a simple Blog system with `Post` as the AbstractPrototype, `Note` and `Blog` are ConcretePrototypes.
+- Allow user to change the default prototype and make a copy of prototype.
