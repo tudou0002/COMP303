@@ -27,3 +27,8 @@ I found that doing some actual coding really helps me to prepare for COMP course
 # Prototype
 - Imagine a simple Blog system with `Post` as the AbstractPrototype, `Note` and `Blog` are ConcretePrototypes.
 - Allow user to change the default prototype and make a copy of prototype.
+
+# Observer
+- Created interfaces `Observer` and `Subject`, object classes `store` and `website` implement `Observer`, `Corporation` implements `Subject`.
+- Question1: how to deal with the update() when the field is a HashMap
+- Question2: can I seperate the update() method so that observers can react differently for different field.
