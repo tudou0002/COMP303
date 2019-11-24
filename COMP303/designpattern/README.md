@@ -36,4 +36,5 @@ I found that doing some actual coding really helps me to prepare for COMP course
 
 # Visitor 
 - Created `TimeVisitor` and `SalaryVisitor` implemented `Visitor` imterface. `Fulltime` and `Parttime` implement Employee interface.
+- Adding a new concrete visitor is easy, adding a new concrete subject violates the open-closed principle.
 - todo: use nonvoid `accept()` and `visit()` later.
