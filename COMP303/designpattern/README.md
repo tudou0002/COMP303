@@ -29,6 +29,11 @@ I found that doing some actual coding really helps me to prepare for COMP course
 - Allow user to change the default prototype and make a copy of prototype.
 
 # Observer
-- Created interfaces `Observer` and `Subject`, object classes `store` and `website` implement `Observer`, `Corporation` implements `Subject`.
+- Created interfaces `Observer` and `Subject`, object classes `store` and `website` implement `Observer`, `Corporation` implements `Subject`. Used push method.
 - Question1: how to deal with the update() when the field is a HashMap
 - Question2: can I seperate the update() method so that observers can react differently for different field.
+- todo: use pull method
+
+# Visitor 
+- Created `TimeVisitor` and `SalaryVisitor` implemented `Visitor` imterface. `Fulltime` and `Parttime` implement Employee interface.
+- todo: use nonvoid `accept()` and `visit()` later.
