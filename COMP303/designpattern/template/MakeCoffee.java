@@ -1,6 +1,10 @@
 package template;
 
+// abstract class for making coffee
+// template design pattern is more likely used in describing a process
 public abstract class MakeCoffee {
+	
+	
 	
 	// subclass cannot change 'final' method
 	final void make() {

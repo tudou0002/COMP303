@@ -20,10 +20,13 @@ public class Client {
 		provigo.addItems(i1, 10);
 		provigo.addItems(i2, 20);
 		provigo.addItems(i1, 7);
+		provigo.addItems(i3, 16);
+		provigo.removeItems(i2, 5);
 		
 		//provigo.open(false);
 		provigo.open(true);
 		
+		System.out.println(provigo.toString());
 	}
 
 }

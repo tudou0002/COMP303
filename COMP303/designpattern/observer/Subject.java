@@ -7,8 +7,6 @@ public interface Subject {
 	
 	// remove the observer from the subject
 	public void unregister(Observer s);
-	
-	// the helper method to notify an observer
-	public void notifyObserver();
+
 
 }

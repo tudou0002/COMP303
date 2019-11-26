@@ -1,7 +1,5 @@
 package iterator;
 
-
-
 public class Item 
 {
 	

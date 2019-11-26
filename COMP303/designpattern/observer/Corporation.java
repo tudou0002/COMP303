@@ -23,14 +23,33 @@ public class Corporation implements Subject{
 		isOpen = true;
 	}
 	
+	/*
+	 * I directly invoked the callback method in the state changing methods
+	 */
 	public void addItems(Item item, int num) {
-		inventory.putIfAbsent(item, num);
-		notifyObserver();
+		int original = inventory.getOrDefault(item, 0);
+		inventory.put(item, num+original);
+		for (Observer o : aObservers) {
+			o.itemAdded(item, num);
+		}
+	}
+	
+	public void removeItems(Item item, int num) {
+		assert inventory.get(item) != null;
+		int remain = inventory.get(item);
+		if(remain>=num) {
+			inventory.put(item,remain-num);
+			for (Observer o : aObservers) {
+				o.itemRemoved(item, num);
+			}
+		}
 	}
 	
 	public void open(boolean o) {
 		isOpen = o;
-		notifyObserver();
+		for (Observer observer : aObservers) {
+			observer.opened(o);
+		}
 	}
 	
 	public String toString() {
@@ -49,13 +68,17 @@ public class Corporation implements Subject{
 		
 	}
 
-	@Override
-	public void notifyObserver() {
-		// I used push pattenr here
-		for (Observer o : aObservers) {
-			o.update(isOpen, inventory);
-		}
-		
-	}
+	/*
+	 * When the notifyOnserver method MUST be inserted to every state changing method, it can be private
+	 * @see observer.Subject#notifyObserver()
+	 */
+//	@Override
+//	private void notifyObserver() {
+//		// I used push pattenr here
+//		for (Observer o : aObservers) {
+//			o.update(isOpen, inventory);
+//		}
+//		
+//	}
 
 }
