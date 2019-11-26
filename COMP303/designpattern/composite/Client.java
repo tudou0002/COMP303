@@ -2,13 +2,17 @@ package composite;
 
 public class Client {
 	
-	public static final Coffee REGULAR = new Regular();
-	public static final Coffee ESPRESSO = new Espresso();
+	public static final File T1 = new TextFile("t1.txt");
+	public static final File T2 = new TextFile("t2.txt");
+	public static final File I1 = new ImageFile("j1.jpg");
+	
 	
 	public static void main(String[] args) {
-		CoffeeShop SecondCup = new CoffeeShop("Second Cup");
-		SecondCup.add(REGULAR,REGULAR,ESPRESSO);
-		System.out.println(SecondCup);
+		File d1 = new Directory("text", T1,T2);
+		File d2 = new Directory("all", d1,I1);
+		
+		d2.description();
+		
 	}
 
 }
