@@ -30,11 +30,13 @@ I found that doing some actual coding really helps me to prepare for COMP course
 
 # Observer
 - Created interfaces `Observer` and `Subject`, object classes `store` and `website` implement `Observer`, `Corporation` implements `Subject`. Used push method.
-- Question1: how to deal with the update() when the field is a HashMap
-- Question2: can I seperate the update() method so that observers can react differently for different field.
-- todo: use pull method
+- Directly invoked the 'callback' methods in the state changing method in the concrete subject.
+- Created three update methods `itemsAdded()`, `itemsRemoved()` and `opened()` in the observer interface.
 
 # Visitor 
 - Created `TimeVisitor` and `SalaryVisitor` implemented `Visitor` imterface. `Fulltime` and `Parttime` implement Employee interface.
 - Adding a new concrete visitor is easy, adding a new concrete subject violates the open-closed principle.
 - todo: use nonvoid `accept()` and `visit()` later.
+
+# Command
+- A simple `AddCommand` implements `Command` to execute/undo the addition.
