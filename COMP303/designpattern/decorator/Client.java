@@ -1,20 +1,18 @@
 package decorator;
 
-import composite.Coffee;
-import composite.CoffeeShop;
-import composite.Espresso;
-import composite.Regular;
+import composite.File;
+import composite.ImageFile;
+import composite.TextFile;
 
 public class Client {
 	
-	public static final Coffee REGULAR = new Regular();
-	public static final Coffee ESPRESSO = new Espresso();
-	private static final Latte LATTE = new Latte(ESPRESSO);
+	public static final File T1 = new TextFile("t1.txt");
+	public static final File T2 = new TextFile("t2.txt");
+	public static final File I1 = new ImageFile("j1.jpg");
+
 
 	public static void main(String[] args) {
-		CoffeeShop castel = new CoffeeShop("Castel");
-		castel.add(REGULAR,ESPRESSO, LATTE);
-		
-		System.out.println(castel);
+		File redfile = new RedTagFile(T1);
+		redfile.description();
 	}
 }
