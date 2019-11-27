@@ -19,7 +19,7 @@ public class RedTagFile implements File {
 	@Override
 	public void description() {
 		file.description() ;
-		System.out.println("tagged as red") ;
+		System.out.println("tagged as red ") ;
 
 	}
 
