@@ -15,10 +15,10 @@ I found that doing some actual coding really helps me to prepare for COMP course
 - Created immutable and unique `Item` object using HashMap.
 
 # Composite
-- Tree-like hierarchy with leaves are `Regular` and `Espresso`.
+- Tree-like hierarchy with leaves are `ImageFile` and `TextFile`, composite is `Directory`.
 
 # Decorator
-- Added a decorator named `Latte`.
+- A simple decorator called `RedTagFile` which behaves like a File.
 
 # Template
 - Mostly used in describing a process which some steps need to be changed based on different cases.
@@ -40,3 +40,6 @@ I found that doing some actual coding really helps me to prepare for COMP course
 
 # Command
 - A simple `AddCommand` implements `Command` to execute/undo the addition.
+
+# Singleton
+- A super super simple implementation as the idea of `TaskManager` in Windows.
