@@ -1,10 +1,14 @@
 package chapter6;
 
 public class AddCommand implements Command{
+	
+	private final Program aProgram;
+	private final Day aDay;
+	private final Show aShow;
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -16,7 +20,7 @@ public class AddCommand implements Command{
 	
 	//3 fields
 	
-	public AddCommand() {
+	public AddCommand(Program p, Day pDay, Show pShow) {
 		
 	}
 

@@ -1,5 +1,7 @@
 package chapter6;
 
+
+
 public class Client {
 	
 	private static final Movie CARVE_UP = new Movie("What a Carve up", 1961, 87);
@@ -40,6 +42,12 @@ public class Client {
 		p2.clear();
 		System.out.println(p2);
 		
+	}
+	
+	public static void lec14() {
+		Program program = new Program();
+		Command c1 = new AddCommand(program, FRIDAY, CARVE_UP);
+		Command c2 = new RemoveCommand()
 	}
 
 }

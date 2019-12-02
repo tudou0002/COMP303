@@ -1,9 +1,11 @@
 package chapter6;
 
 import java.util.EnumMap;
+import java.util.Optional;
 
 public class Program {
 	private final EnumMap<Day,Show> aShows = new EnumMap<>(Day.class);
+	private final CommandProcessor aProcessor = new BasicCommandProcessor();
 	
 	private static Show aDefault;
 	
@@ -21,6 +23,11 @@ public class Program {
 	}
 	
 	public Program() {
+		clear();
+	}
+	
+	public Program(CommandProcessor pProcessor) {
+		aProcessor = pProcessor;
 		clear();
 	}
 	
@@ -61,37 +68,63 @@ public class Program {
 		return result.toString();
 	}
 	
-//	//factory method makes the code much more easier
-//	public Command createRemoveCommand(Day pDay) {
-//		return new Command() {
-//		private Show aRemoved;
-//
-//	
-//		@Override
-//		public void execute() {
-//			// TODO Auto-generated method stub
-//			aRemoved = Optional.
-//			aProgram.remove(pDay);
-//		}
-//		@Override
-//		public void undo() {
-//			// TODO Auto-generated method stub
-//			
-//		}}
-//
-//	}
-//	
-//	public Command createAddCommand(Day pDay) {
-//		return new Command() {
-//			//no need for constructor and no program field
-//			
-//		}
-//	}
-//	
-//	public Command createClearCommand(Day pDay) {
-//		return new Command() {
-//			
-//		}
-//	}
+	//factory method makes the code much more easier
+	public Command createRemoveCommand(Day pDay) {
+		return new Command() {
+		private Optional<Show> aRemoved = Optional.empty();
+
+	
+		@Override
+		public void execute() {
+			// TODO Auto-generated method stub
+			Show show = get(pDay);
+			aRemoved = Optional.of(show);
+			remove(pDay);
+		}
+		@Override
+		public void undo() {
+			assert aRemoved.isPresent();
+			add(aRemoved.get(),pDay);
+		}};
+
+	}
+	
+	public Command createAddCommand(Day pDay,Show pShow) {
+		return new Command() {
+
+			@Override
+			public void execute() {
+				add(pShow,pDay);
+			}
+
+			@Override
+			public void undo() {
+				remove(pDay);
+			}
+			
+		};
+	}
+	
+	public Command createClearCommand(Day pDay) {
+		return new Command() {
+			private Optional<EnumMap<Day,Show>> aOld = Optional.empty();
+			
+		
+
+			@Override
+			public void execute() {
+				aOld = Optional.of((EnumMap<Day,Show>) new EnumMap(aShows));
+				clear();
+				
+			}
+
+			@Override
+			public void undo() {
+				assert aOld.isPresent();
+				for (Day day : Day.values()) {
+					add(aOld.get().get(day),day);
+				}
+			}};
+	}
 
 }

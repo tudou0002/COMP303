@@ -8,6 +8,7 @@ public class CommandProcessor {
 	
 	private final List<Command> aCommands = new ArrayList<>();
 	
+	
 	public void add(Command pCommand) {
 		aCommands.add(pCommand);
 	}
@@ -17,9 +18,15 @@ public class CommandProcessor {
 		
 	}
 	
+	public void consume(Command pCommand) {
+		pCommand.execute();
+		aCommands.add(pCommand);
+	}
+	
 	public void undoLast() {
-		assert
-		Command command = 
+		assert !aCommands.isEmpty();
+		Command command = aCommands.remove(aCommands.size()-1);
+		command.undo();
 	}
 
 }
