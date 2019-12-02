@@ -1,0 +1,5 @@
+# Final review Problem
+
+A bike courier Company relies on Scheduler algorithm to dispatch Bikers to Locations. The Company wants the flexibility to install different Scheduler algorithms. However, all scheduling algorithms should follow these steps: (a) check if at least one biker is available, and if not throw an exception; (b) schedule a biker using a given algorithm; (c) notify some objects, including Company, that a biker was scheduled. Concrete schedulers should also have the flexibility to throw algorithm-specific types of exceptions if they cannot fulfill a scheduling request. It should be possible to combine schedulers, for example to select different outcomes. For any scheduler algorithm, it should also be possible to optionally instrument the algorithm to measure the time it takes and report it. We might also want to perform an open-ended set of traversal operations on a scheduler structure.
+
+![class diagram](https://github.com/tudou0002/COMP303/blob/master/COMP303/src/review/review.png)
